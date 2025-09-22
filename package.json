@@ -21,12 +21,12 @@
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fwilson001/qkey-docs-engine.git"
+    "url": "git+https://github.com/fwilson001/Qkey-Docs.git"
   },
   "bugs": {
-    "url": "https://github.com/fwilson001/qkey-docs-engine/issues"
+    "url": "https://github.com/fwilson001/Qkey-Docs/issues"
   },
-  "homepage": "https://github.com/fwilson001/qkey-docs-engine#readme",
+  "homepage": "https://github.com/fwilson001/Qkey-Docs#readme",
   "dependencies": {},
   "devDependencies": {}
 }

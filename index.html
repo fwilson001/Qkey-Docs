@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Qkey Documentation</title>
+	<meta name="description" content="Qkey Backup dynamic documentation" />
+	<link rel="stylesheet" href="./assets/css/qkey-theme.css" />
+	<style>
+		/* Minimal critical adjustments (rest in qkey-theme.css) */
+		body,html{height:100%;}
+		.doc-article{overflow-y:auto;}
+		.no-js{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#081520;color:#fff;font:16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;z-index:9999;padding:40px;text-align:center;}
+		/* Lightweight page loader overlay */
+		#page-loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(8,21,32,.96);color:#cde2ff;font:15px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;z-index:9998;gap:14px;}
+		#page-loader .spinner{width:18px;height:18px;border:3px solid rgba(205,226,255,.35);border-top-color:#8bc0ff;border-radius:50%;animation:spin 1s linear infinite}
+		@keyframes spin{to{transform:rotate(360deg)}}
+		/* Migration banner */
+		#legacy-docs-migration{position:sticky;top:0;z-index:1000;background:#142436;color:#d8ecff;font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:10px 18px;border-bottom:1px solid #224257;display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+		#legacy-docs-migration strong{font-weight:600;}
+		#legacy-docs-migration a{color:#7fc4ff;text-decoration:underline;}
+		#legacy-docs-migration #dismiss-migration{margin-left:auto;background:#1e3550;color:#cfe7ff;border:1px solid #33567a;border-radius:4px;padding:4px 10px;cursor:pointer;}
+		#legacy-docs-migration #dismiss-migration:hover{background:#254466;}
+	</style>
+</head>
+<body>
+    
+	<noscript><div class="no-js">JavaScript is required to view documentation.</div></noscript>
+	<div id="page-loader" role="status" aria-live="polite" aria-label="Loading">
+		<div class="spinner" aria-hidden="true"></div>
+		<div>Building documentation…</div>
+	</div>
+	<!-- Top navigation / brand + search -->
+	<header class="top-bar" aria-label="Primary">
+		<div class="top-bar-inner">
+			<div class="brand-mini" aria-label="Brand">Qkey <span>Docs</span></div>
+				<button id="theme-toggle" aria-label="Toggle color theme" title="Toggle dark/light mode" class="theme-toggle" type="button">🌙</button>
+				<button id="density-toggle" aria-label="Toggle density" title="Toggle compact density" class="theme-toggle" type="button">≣</button>
+				<button id="print-export" aria-label="Print Book" title="Print current book" class="theme-toggle" type="button">🖨</button>
+				<button id="pdf-export" aria-label="Export PDF" title="Export current book as PDF" class="theme-toggle" type="button">📄</button>
+			<form id="doc-search-form" role="search" aria-label="Search documentation">
+				<input id="doc-search-input" type="text" placeholder="Search…" autocomplete="off" aria-label="Search" />
+				<button type="submit" aria-label="Highlight in page">Find</button>
+				<span id="search-meta" class="search-meta" hidden></span>
+			</form>
+		</div>
+	</header>
+
+	<!-- Main layout shell -->
+	<main class="layout-shell" aria-label="Documentation Layout">
+			<aside class="toc" aria-label="Sidebar Navigation">
+				<!-- Books/Chapters nav will be injected here as <nav id="book-nav"> -->
+				<!-- Topics section will be appended below by runtime (buildTOC) -->
+			</aside>
+		<article id="qk-article" class="doc-article" aria-label="Article">
+			<nav class="breadcrumbs" id="breadcrumbs" aria-label="Breadcrumbs"></nav>
+			<div id="doc-content" class="fade-in" aria-live="polite"></div>
+		</article>
+	</main>
+
+	<footer class="site-footer" aria-label="Site footer">
+		<div class="footer-inner">
+			<span>Powered by <a href="https://QueryKey.com" rel="noopener" target="_blank">QueryKey Docs</a></span>
+		</div>
+	</footer>
+
+	<!-- Optional vendor markdown parser (uncomment if you add local copy) -->
+		<script src="./assets/vendor/marked.min.js"></script>
+		<script src="./assets/vendor/highlight.min.js"></script>
+		<link rel="stylesheet" href="./assets/vendor/highlight.css" />
+	<script type="module" src="./assets/js/bootstrap.mjs"></script>
+    
+</body>
+</html>

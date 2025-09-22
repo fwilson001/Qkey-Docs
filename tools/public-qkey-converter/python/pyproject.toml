@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qkey-converter"  
+version = "1.0.0"
+description = "Official QKey format parser/generator with blockchain support"
+readme = "README.md"
+license = {text = "GPL-3.0-only"}
+authors = [
+    {name = "Farrel Wilson", email = "contact@querykey.com"}
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Database",
+    "Topic :: Internet :: WWW/HTTP",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+keywords = ["qkey", "parser", "converter", "blockchain", "ethereum", "bitcoin", "csv", "xml", "json", "binary"]
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://querykey.com"
+Repository = "https://www.querykey.com/qkey-converter-python"
+Issues = "https://www.querykey.com/support"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["qkey_converter*"]

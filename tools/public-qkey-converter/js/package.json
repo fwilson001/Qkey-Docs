@@ -1,0 +1,47 @@
+{
+  "name": "qkey-converter",
+  "version": "1.0.0",
+  "description": "Official QKey format parser/generator with blockchain support",
+  "type": "module",
+  "main": "./qkeyConverter.js",
+  "module": "./qkeyConverter.js",
+  "exports": {
+    ".": "./qkeyConverter.js"
+  },
+  "scripts": {
+  "test": "node ./examples.js",
+  "example": "node ./examples.js"
+  },
+  "keywords": [
+    "qkey",
+    "parser",
+    "converter",
+    "blockchain",
+    "ethereum",
+    "bitcoin",
+    "csv",
+    "xml",
+    "json",
+    "binary"
+  ],
+  "author": "Farrel Wilson <contact@querykey.com>",
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+  "url": "https://www.querykey.com/qkey-converter"
+  },
+  "bugs": {
+  "url": "https://www.querykey.com/support"
+  },
+  "homepage": "https://querykey.com",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "qkeyConverter.js",
+    "examples.js",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "FEATURES.md"
+  ]
+}

@@ -1,0 +1,2 @@
+# Development dependencies (optional)
+# Add any testing or development packages here if needed

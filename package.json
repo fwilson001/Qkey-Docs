@@ -1,0 +1,32 @@
+{
+  "name": "@querykey/qkey-docs-engine",
+  "version": "1.0.0",
+  "description": "Lightweight dynamic documentation engine: build aggregated container + runtime viewer for Qkey Docs.",
+  "type": "module",
+  "exports": {
+    "./build": "./tools/build-docs-container.mjs",
+    "./runtime": "./assets/js/qkey-docs.mjs"
+  },
+  "bin": {
+    "docs-build": "./tools/build-docs-container.mjs"
+  },
+  "scripts": {
+    "build": "node ./tools/build-docs-container.mjs",
+    "demo:build": "node ./tools/build-docs-container.mjs",
+    "demo:serve": "echo 'Demo server not implemented yet'",
+    "demo": "npm run demo:build && npm run demo:serve"
+  },
+  "keywords": ["documentation","static","dynamic","markdown","export","runtime","qkey","docs"],
+  "author": "Qkey Docs Team",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/querykey/qkey-docs-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/querykey/qkey-docs-engine/issues"
+  },
+  "homepage": "https://github.com/querykey/qkey-docs-engine#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}

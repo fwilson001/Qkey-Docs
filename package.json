@@ -1,7 +1,7 @@
 {
   "name": "@querykey/qkey-docs-engine",
   "version": "1.0.0",
-  "description": "Lightweight dynamic documentation engine: build aggregated container + runtime viewer for Qkey Docs.",
+  "description": "Transform Markdown into beautiful, searchable documentation. Zero dependencies, container-based, offline-ready, and fully accessible.",
   "type": "module",
   "exports": {
     "./build": "./tools/build-docs-container.mjs",

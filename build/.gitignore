@@ -1,0 +1,9 @@
+# Ignore common files that shouldn't be in documentation
+*.log
+*.tmp
+*~
+.DS_Store
+Thumbs.db
+node_modules/
+.env
+.env.local

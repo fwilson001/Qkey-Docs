@@ -1,0 +1,272 @@
+/* Print-specific styles for beautiful offline documentation */
+@media print {
+    /* Reset colors for print */
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+    
+    /* Page setup */
+    @page {
+        margin: 1in;
+        size: A4;
+    }
+    
+    /* Hide interactive elements */
+    .header,
+    .sidebar,
+    .search-container,
+    .theme-toggle,
+    .menu-toggle,
+    .page-nav,
+    .skip-link {
+        display: none !important;
+    }
+    
+    /* Adjust layout for print */
+    .app {
+        display: block;
+    }
+    
+    .main-layout {
+        display: block;
+    }
+    
+    .main-content {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+    }
+    
+    .content-wrapper {
+        padding: 0;
+        max-width: none;
+        margin: 0;
+    }
+    
+    /* Typography adjustments */
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        font-family: "Times New Roman", Times, serif;
+    }
+    
+    .content h1 {
+        font-size: 20pt;
+        margin-top: 0;
+        margin-bottom: 12pt;
+        page-break-after: avoid;
+        border-bottom: 2pt solid black;
+        padding-bottom: 6pt;
+    }
+    
+    .content h2 {
+        font-size: 16pt;
+        margin-top: 18pt;
+        margin-bottom: 6pt;
+        page-break-after: avoid;
+        border-bottom: 1pt solid black;
+        padding-bottom: 3pt;
+    }
+    
+    .content h3 {
+        font-size: 14pt;
+        margin-top: 12pt;
+        margin-bottom: 6pt;
+        page-break-after: avoid;
+    }
+    
+    .content h4,
+    .content h5,
+    .content h6 {
+        font-size: 12pt;
+        margin-top: 12pt;
+        margin-bottom: 6pt;
+        page-break-after: avoid;
+    }
+    
+    .content p {
+        margin-bottom: 6pt;
+        orphans: 3;
+        widows: 3;
+    }
+    
+    /* Lists */
+    .content ul,
+    .content ol {
+        margin-bottom: 6pt;
+        page-break-inside: avoid;
+    }
+    
+    .content li {
+        margin-bottom: 2pt;
+    }
+    
+    /* Code blocks */
+    .content pre {
+        background: #f5f5f5 !important;
+        border: 1pt solid #ccc !important;
+        padding: 6pt;
+        font-size: 10pt;
+        font-family: "Courier New", Courier, monospace;
+        page-break-inside: avoid;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    
+    .content code {
+        background: #f5f5f5 !important;
+        border: 1pt solid #ccc !important;
+        padding: 1pt 2pt;
+        font-size: 10pt;
+        font-family: "Courier New", Courier, monospace;
+    }
+    
+    /* Blockquotes */
+    .content blockquote {
+        border-left: 3pt solid black !important;
+        margin: 12pt 0;
+        padding: 6pt 0 6pt 12pt;
+        background: #f9f9f9 !important;
+        page-break-inside: avoid;
+        font-style: italic;
+    }
+    
+    /* Tables */
+    .content table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 12pt 0;
+        page-break-inside: avoid;
+        border: 1pt solid black !important;
+    }
+    
+    .content th,
+    .content td {
+        border: 1pt solid black !important;
+        padding: 3pt 6pt;
+        text-align: left;
+        vertical-align: top;
+    }
+    
+    .content th {
+        background: #f0f0f0 !important;
+        font-weight: bold;
+    }
+    
+    /* Images */
+    .content img {
+        max-width: 100%;
+        height: auto;
+        page-break-inside: avoid;
+        border: 1pt solid #ccc !important;
+    }
+    
+    /* Links */
+    .content a {
+        color: black !important;
+        text-decoration: underline;
+    }
+    
+    .content a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        color: #666 !important;
+    }
+    
+    /* HR */
+    .content hr {
+        border: none;
+        border-top: 1pt solid black !important;
+        margin: 18pt 0;
+    }
+    
+    /* Page breaks */
+    .content h1,
+    .content h2 {
+        page-break-before: auto;
+    }
+    
+    .content h1:not(:first-child) {
+        page-break-before: always;
+    }
+    
+    /* Avoid page breaks */
+    .content h1,
+    .content h2,
+    .content h3,
+    .content h4,
+    .content h5,
+    .content h6,
+    .content blockquote,
+    .content pre,
+    .content table,
+    .content img {
+        page-break-inside: avoid;
+    }
+    
+    /* Table of contents for print */
+    .print-toc {
+        display: block !important;
+        page-break-after: always;
+        margin-bottom: 24pt;
+    }
+    
+    .print-toc h2 {
+        font-size: 16pt;
+        margin-bottom: 12pt;
+        text-align: center;
+    }
+    
+    .print-toc ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .print-toc li {
+        margin: 3pt 0;
+        padding-left: 12pt;
+    }
+    
+    .print-toc a {
+        text-decoration: none;
+        color: black !important;
+    }
+    
+    .print-toc a:after {
+        content: leader(dotted) " " target-counter(attr(href), page);
+    }
+    
+    /* Footer for pages */
+    @page {
+        @bottom-center {
+            content: "Page " counter(page) " of " counter(pages);
+            font-size: 10pt;
+            color: #666;
+        }
+        
+        @bottom-left {
+            content: "Qkey Docs";
+            font-size: 10pt;
+            color: #666;
+        }
+        
+        @bottom-right {
+            content: "Generated: " string(print-date);
+            font-size: 10pt;
+            color: #666;
+        }
+    }
+    
+    /* Print date */
+    .print-date {
+        string-set: print-date content();
+    }
+    
+    /* Optimize for printing */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+}

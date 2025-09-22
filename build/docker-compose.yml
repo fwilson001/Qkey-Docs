@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  qkey-docs:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./docs:/usr/share/nginx/html/docs:ro
+    restart: unless-stopped

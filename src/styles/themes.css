@@ -1,0 +1,184 @@
+/* Dark theme */
+[data-theme="dark"] {
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --bg-tertiary: #374151;
+    --border-primary: #374151;
+    --border-secondary: #4b5563;
+    --accent-primary: #3b82f6;
+    --accent-secondary: #60a5fa;
+    --success: #34d399;
+    --warning: #fbbf24;
+    --error: #f87171;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-lg: rgba(0, 0, 0, 0.4);
+}
+
+/* Dark theme toggle icon */
+[data-theme="dark"] .light-icon {
+    opacity: 0;
+}
+
+[data-theme="dark"] .dark-icon {
+    opacity: 1;
+}
+
+/* Auto theme based on system preference */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: #f9fafb;
+        --text-secondary: #d1d5db;
+        --text-muted: #9ca3af;
+        --bg-primary: #111827;
+        --bg-secondary: #1f2937;
+        --bg-tertiary: #374151;
+        --border-primary: #374151;
+        --border-secondary: #4b5563;
+        --accent-primary: #3b82f6;
+        --accent-secondary: #60a5fa;
+        --success: #34d399;
+        --warning: #fbbf24;
+        --error: #f87171;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --shadow-lg: rgba(0, 0, 0, 0.4);
+    }
+    
+    .light-icon {
+        opacity: 0;
+    }
+    
+    .dark-icon {
+        opacity: 1;
+    }
+}
+
+/* Override auto theme when manual theme is set */
+[data-theme="light"] {
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-tertiary: #f3f4f6;
+    --border-primary: #e5e7eb;
+    --border-secondary: #d1d5db;
+    --accent-primary: #2563eb;
+    --accent-secondary: #3b82f6;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-lg: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .light-icon {
+    opacity: 1;
+}
+
+[data-theme="light"] .dark-icon {
+    opacity: 0;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-secondary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-secondary) var(--bg-secondary);
+}
+
+/* Theme transition animations */
+* {
+    transition: background-color var(--transition-normal), 
+                border-color var(--transition-normal), 
+                color var(--transition-normal),
+                box-shadow var(--transition-normal);
+}
+
+/* Selection styling */
+::selection {
+    background: rgba(37, 99, 235, 0.3);
+    color: var(--text-primary);
+}
+
+::-moz-selection {
+    background: rgba(37, 99, 235, 0.3);
+    color: var(--text-primary);
+}
+
+/* Code highlighting for different themes */
+.content pre {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+}
+
+.content code {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+/* Syntax highlighting colors for dark theme */
+[data-theme="dark"] .content pre,
+[data-theme="dark"] .content code {
+    color: #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+    .content pre,
+    .content code {
+        color: #e5e7eb;
+    }
+}
+
+/* Theme-specific focus styles */
+[data-theme="dark"] *:focus-visible {
+    outline-color: #60a5fa;
+}
+
+@media (prefers-color-scheme: dark) {
+    *:focus-visible {
+        outline-color: #60a5fa;
+    }
+}
+
+/* High contrast improvements for dark theme */
+@media (prefers-contrast: high) {
+    [data-theme="dark"] {
+        --border-primary: #ffffff;
+        --border-secondary: #ffffff;
+        --text-secondary: #ffffff;
+    }
+}
+
+/* Loading spinner theme adaptation */
+[data-theme="dark"] .loading-spinner {
+    border-color: var(--border-primary);
+    border-top-color: var(--accent-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+    .loading-spinner {
+        border-color: var(--border-primary);
+        border-top-color: var(--accent-primary);
+    }
+}
